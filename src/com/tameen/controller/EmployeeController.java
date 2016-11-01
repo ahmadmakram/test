@@ -2,8 +2,6 @@ package com.tameen.controller;
 
 import java.io.Serializable;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
 
 import org.springframework.stereotype.Component;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,9 +19,11 @@ public class EmployeeController implements Serializable {
 
 	public EmployeeController() {
 		emp1 = new Employee();
+		emp1.setEmpId(1l);
 		emp1.setFirstName("Huong");
 		emp1.setLastName("Nguyen");
 		emp2 = new Employee();
+		emp2.setEmpId(2l);
 		emp2.setFirstName("Khang");
 		emp2.setLastName("Le");
 	}
