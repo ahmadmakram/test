@@ -15,7 +15,7 @@ public class Employee implements Serializable {
 	@Id
 	@Column(name = "id")
 //	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	private Long empId;
+	private Long id;
 	@Column(nullable = false)
 	private String firstName;
 	@Column(nullable = false)
@@ -24,20 +24,26 @@ public class Employee implements Serializable {
 	private String company;
 	private String team;
 	private String phone;
-	private String job;
 	private String imagePath;
 	private String email;
+	
 	@ManyToOne
-	@JoinColumn(name = "deptId")
+	//@JoinColumn(name = "id")
+	private Job job;
+	
+	@ManyToOne
+	//@JoinColumn(name = "id")
 	private Department department;
 
-	public Long getEmpId() {
-		return empId;
+
+	public Long getId() {
+		return id;
 	}
 
-	public void setEmpId(Long empId) {
-		this.empId = empId;
+	public void setId(Long id) {
+		this.id = id;
 	}
+
 
 	public String getFirstName() {
 		return firstName;
@@ -87,11 +93,11 @@ public class Employee implements Serializable {
 		this.phone = phone;
 	}
 
-	public String getJob() {
+	public Job getJob() {
 		return job;
 	}
 
-	public void setJob(String job) {
+	public void setJob(Job job) {
 		this.job = job;
 	}
 

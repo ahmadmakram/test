@@ -17,21 +17,21 @@ public class EmployeeController implements Serializable {
 	private Employee emp1;
 	private Employee emp2;
 
-	public EmployeeController() {
-		emp1 = new Employee();
-		emp1.setEmpId(1l);
-		emp1.setFirstName("Huong");
-		emp1.setLastName("Nguyen");
-		emp2 = new Employee();
-		emp2.setEmpId(2l);
-		emp2.setFirstName("Khang");
-		emp2.setLastName("Le");
+	public EmployeeController() {	
 	}
 
 	public void addEmployee() {
+		emp1 = new Employee();
+		emp1.setId(1l);
+		emp1.setFirstName("Huong");
+		emp1.setLastName("Nguyen");
+		emp2 = new Employee();
+		emp2.setId(2l);
+		emp2.setFirstName("Khang");
+		emp2.setLastName("Le");
 		empService.addEmployee(emp1);
 		empService.addEmployee(emp2);
-		employee = empService.findEmployeeById(emp1.getEmpId());
+		employee = empService.findEmployeeById(emp1.getId());
 	}
 
 	public Employee getEmployee() {

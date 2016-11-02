@@ -1,34 +1,26 @@
 package com.tameen.model;
 
-import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
-import javax.persistence.CascadeType;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
 
 @Entity
-@Table(name = "Department")
-public class Department implements Serializable {
-	private static final long serialVersionUID = 1L;
+public class Status {
+
+	private static final long serialVersionUID = -1703704054345343680L;
+
 	@Id
-	@Column(name = "id")
-	// @GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@Column(name = "id", unique = true)
 	private Long id;
-	@Column(nullable = false)
-	private String name;
+	@Column(unique = true)
+	private String statusName;
 	private Date insertionDate = new Date();
 	@Column(columnDefinition = "TEXT")
 	private String description;
-	
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "id")
-	private List<Employee> employees;
 
+	
 	public Long getId() {
 		return id;
 	}
@@ -37,12 +29,12 @@ public class Department implements Serializable {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getStatusName() {
+		return statusName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setStatusName(String statusName) {
+		this.statusName = statusName;
 	}
 
 	public Date getInsertionDate() {
