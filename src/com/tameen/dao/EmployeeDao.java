@@ -7,4 +7,5 @@ public interface EmployeeDao {
 	public boolean addEmployee(Employee emp);
 
 	public Employee findEmployeeById(long empId);
+
 }
