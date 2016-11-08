@@ -6,23 +6,26 @@ import java.util.Map;
 
 import org.springframework.stereotype.Component;
 
-
 @Component()
 public class SearchController implements Serializable {
 	private static final long serialVersionUID = 1L;
-    private String searchType;
-    private String searchVal;
-    private Map<String,String> searchList;
-     
-    public SearchController() {
-        searchList  = new HashMap<String, String>();
-        searchList.put("Iqama", "Iqama");
-        searchList.put("Project", "project");
-        searchList.put("acc", "acc");
-  
-    }
+	private String searchType;
+	private String searchVal;
+	private Map<String, String> searchList;
 
-    public String getSearchType() {
+	public SearchController() {
+		searchList = new HashMap<String, String>();
+		searchList.put("Iqama", "Iqama");
+		searchList.put("Project", "project");
+		searchList.put("acc", "acc");
+
+	}
+
+	public void search() {
+		System.out.println("searchhhhhhhhhhhhhhhhhhhhhhhhh");
+	}
+
+	public String getSearchType() {
 		return searchType;
 	}
 
@@ -47,11 +50,9 @@ public class SearchController implements Serializable {
 	}
 
 	public void onCountryChange() {
-        if(searchType !=null && !searchType.equals(""))
-           System.out.println(searchType);
-        
-    }
-     
-   
-}
+		if (searchType != null && !searchType.equals(""))
+			System.out.println(searchType);
 
+	}
+
+}

@@ -29,8 +29,8 @@ public class EmployeeController implements Serializable {
 		emp2.setId(2l);
 		emp2.setFirstName("Khang");
 		emp2.setLastName("Le");
-		empService.addEmployee(emp1);
-		empService.addEmployee(emp2);
+//		empService.addEmployee(emp1);
+//		empService.addEmployee(emp2);
 		employee = empService.findEmployeeById(emp1.getId());
 	}
 
