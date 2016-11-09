@@ -10,7 +10,7 @@
 	<h:outputText value="Hello JSF" />
 	<p:editor value="Hello Primefaces" />
 	<h:form id="empForm">
-		<p:commandButton value="Add default" action="#{empBean.addEmployee()}"
+		<p:commandButton value="Add default" actionListener="#{empBean.addEmployee}"
 			update="empForm" />
 		<h3>Hello</h3>
 		<h:outputText id="employeeId"

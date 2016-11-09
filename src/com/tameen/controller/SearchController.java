@@ -4,7 +4,11 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import com.tameen.model.Project;
+import com.tameen.service.SearchService;
 
 @Component()
 public class SearchController implements Serializable {
@@ -12,6 +16,9 @@ public class SearchController implements Serializable {
 	private String searchType;
 	private String searchVal;
 	private Map<String, String> searchList;
+	private Project project;
+	@Autowired
+	private SearchService searchService;
 
 	public SearchController() {
 		searchList = new HashMap<String, String>();
@@ -23,6 +30,14 @@ public class SearchController implements Serializable {
 
 	public void search() {
 		System.out.println("searchhhhhhhhhhhhhhhhhhhhhhhhh");
+		switch (searchType) {
+		case "Iqama":
+		//	searchResult = searchService.findEmployeeById(Long.parseLong(getSearchVal()));
+			break;
+
+		default:
+			break;
+		}
 	}
 
 	public String getSearchType() {

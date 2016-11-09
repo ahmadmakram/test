@@ -23,13 +23,13 @@
     <h:form id="searchForm">
             <p:outputLabel for="searchMenuId" value="Search By: " />
             <p:selectOneMenu id="searchMenuId" value="#{searchController.searchType}" style="width:150px">
-                <p:ajax listener="#{searchController.onCountryChange()}"/>
+                <p:ajax listener="#{searchController.onCountryChange}"/>
                 <f:selectItem itemLabel="Search By" itemValue="" noSelectionOption="true" />
                 <f:selectItems value="#{searchController.searchList}" />
             </p:selectOneMenu>
             <h:inputText id="username" value="#{searchController.searchVal}" required="true"  />
             
-		<p:commandButton value="Search" action="#{searchController.search()}"
+		<p:commandButton value="Search" action="#{searchController.search}"
 			update="searchForm" />
 		
 	</h:form>

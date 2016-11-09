@@ -12,15 +12,9 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "Member")
-public class Member implements Serializable {
+public class Member extends CommonEntity {
 	private static final long serialVersionUID = 1L;
-	@Id
-	@Column(name = "id")
-	// @GeneratedValue(strategy = GenerationType.SEQUENCE)
-	private Long id;
-
-	@Column(nullable = false)
-	private String memberName;
+	
 
 	private String insurClass;
 	private String gender;
@@ -38,31 +32,12 @@ public class Member implements Serializable {
 	private String premiumValue;
 
 	@ManyToOne
-	//@JoinColumn(name = "id")
 	private Employee empId;
 
 	@ManyToOne
-	//@JoinColumn(name = "id")
 	private Status status;
 	@ManyToOne
-//	@JoinColumn(name = "id")
 	private Department department;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getMemberName() {
-		return memberName;
-	}
-
-	public void setMemberName(String memberName) {
-		this.memberName = memberName;
-	}
 
 	public String getInsurClass() {
 		return insurClass;
